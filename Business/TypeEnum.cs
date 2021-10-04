@@ -1,0 +1,1 @@
+﻿enum Type { Goblin, Dragon, Wizard, Ork, Knight, Kraken, Elf, Troll }

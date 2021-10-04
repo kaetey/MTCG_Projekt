@@ -6,20 +6,12 @@ using System.Threading.Tasks;
 
 namespace Business
 {
-    enum Element { Fire, Water, Normal }
-    enum Type { Goblin, Dragon, Wizard, Ork, Knight, Kraken, Elf, Troll }
-
     class Card
     {
-        private string name;
-        private int damage;
-        private Element elementType;
-        private Type type;
-
-        public string Name { get { return name; } set { } }
-        public int Damage { get { return damage; } set { } }
-        public Element ElementType { get { return elementType; } set { } }
-        public Type Type { get { return type; } set { } }
+        private string name { get; set; }
+        private int damage { get; set; }
+        private Element elementType { get; set; }
+        private Type type { get; set; }
 
         public Card(){}
         public Card(string name, int damage , int element, int type)

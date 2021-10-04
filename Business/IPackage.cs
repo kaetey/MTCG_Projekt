@@ -6,10 +6,8 @@ using System.Threading.Tasks;
 
 namespace Business
 {
-    class MonsterCard : Card
+    interface IPackage
     {
-        public MonsterCard() {
-            
-        }
+        void buyPackage(); //zugriffsmethode überdenken
     }
 }

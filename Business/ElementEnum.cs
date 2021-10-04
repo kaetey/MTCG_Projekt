@@ -1,0 +1,1 @@
+﻿enum Element { Fire, Water, Normal }
