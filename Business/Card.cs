@@ -8,10 +8,10 @@ namespace Business
 {
     class Card
     {
-        private string name { get; set; }
-        private int damage { get; set; }
-        private Element elementType { get; set; }
-        private Type type { get; set; }
+        protected string name { get; set; }
+        protected int damage { get; set; }
+        protected Element elementType { get; set; }
+        protected Type type { get; set; }
 
         public Card(){}
         public Card(string name, int damage , int element, int type)
@@ -21,5 +21,6 @@ namespace Business
             this.elementType = (Element)element;
             this.type = (Type)type;
         }
+
     }
 }

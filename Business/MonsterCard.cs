@@ -8,8 +8,36 @@ namespace Business
 {
     class MonsterCard : Card
     {
-        public MonsterCard() {
-            
+        public MonsterCard(string name, int damage, int element, int type) {
+            this.name = name;
+            this.damage = damage;
+            this.elementType = (Element)element;
+            this.type = (Type)type;
+        }
+
+        public void attack(Card enemyCard)
+        {
+            if (enemyCard is SpellCard) this.attackSpellCard();
+            else if (enemyCard is MonsterCard) this.atttackMonsterCard();
+        }
+
+        public void attackSpellCard()
+        {
+            switch (this.elementType)
+            {
+                case Element.Fire:
+                    //damage enemyCard
+                    break;
+                case Element.Water:
+                    break;
+                case Element.Normal:
+                    break;
+            }
+        }
+
+        public void atttackMonsterCard()
+        {
+            //normal damage?
         }
     }
 }
