@@ -8,10 +8,9 @@ namespace Business
 {
     class MonsterCard : Card
     {
-        public MonsterCard(string name, int damage, int element, int type) {
-            this.name = name;
-            this.damage = damage;
-            this.elementType = (Element)element;
+        private Type type { get; set; }
+
+        public MonsterCard(string name, int damage, int element, int type) : base(name, damage, element){
             this.type = (Type)type;
         }
 

@@ -8,12 +8,7 @@ namespace Business
 {
     class SpellCard : Card
     {
-        public SpellCard(string name, int damage, int element, int type) {
-            this.name = name;
-            this.damage = damage;
-            this.elementType = (Element)element;
-            this.type = (Type)type;
-        }
+        public SpellCard(string name, int damage, int element) : base(name, damage, element){}
 
         public int attack(Card enemyCard)
         {
@@ -33,7 +28,7 @@ namespace Business
                     }
                     break;
                 case Element.Water:
-                    switch (enemyCard.getElementType())
+                    switch (enemyCard.elementType)
                     {
                         case Element.Fire:
                             damage = damage * 2;
@@ -44,7 +39,7 @@ namespace Business
                     }
                     break;
                 case Element.Normal:
-                    switch (enemyCard.getElementType())
+                    switch (enemyCard.elementType)
                     {
                         case Element.Water:
                             damage = damage * 2;
