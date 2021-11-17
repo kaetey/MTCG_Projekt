@@ -10,11 +10,8 @@ namespace Business
     {
         public SpellCard(string name, int damage, int element) : base(name, damage, element){}
 
-        public int attack(Card enemyCard)
+        /*public int attack(Card enemyCard)
         {
-            int damage = new Random().Next(1, 100);
-            Console.WriteLine(damage);
-               
             switch (this.elementType)
             {
                 case Element.Fire:
@@ -52,6 +49,6 @@ namespace Business
             }
 
             return damage;
-        }
+        }*/
     }
 }

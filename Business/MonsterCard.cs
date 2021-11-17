@@ -8,35 +8,62 @@ namespace Business
 {
     class MonsterCard : Card
     {
-        private Type type { get; set; }
+        public Type type { get; set; }
 
         public MonsterCard(string name, int damage, int element, int type) : base(name, damage, element){
             this.type = (Type)type;
         }
 
-        public void attack(Card enemyCard)
+        /*public bool attack(Card enemyCard)
         {
-            if (enemyCard is SpellCard) this.attackSpellCard();
-            else if (enemyCard is MonsterCard) this.atttackMonsterCard();
+            bool win = false;
+            if (enemyCard is SpellCard) win = this.attackSpellCard((SpellCard)enemyCard);
+            else if (enemyCard is MonsterCard) win = this.atttackMonsterCard((MonsterCard)enemyCard);
+            return win;
         }
 
-        public void attackSpellCard()
+        public bool attackSpellCard(SpellCard enemyCard)
         {
-            switch (this.elementType)
+            switch (enemyCard.elementType)
             {
                 case Element.Fire:
-                    //damage enemyCard
+
                     break;
                 case Element.Water:
                     break;
                 case Element.Normal:
                     break;
+
+                //beachte Knights vs WaterSpells
             }
+            return false;
         }
 
-        public void atttackMonsterCard()
+        public bool atttackMonsterCard(MonsterCard enemyCard)
         {
-            //normal damage?
-        }
+            bool win;
+            switch (this.type)
+            {
+                case Type.Goblin:
+                    if (enemyCard.type == Type.Dragon) win = false;
+                    else win = (enemyCard.damage > this.damage) ? false : true;
+                    break;
+                case Type.Dragon:
+                    break;
+                case Type.Wizard:
+                    break;
+                case Type.Ork:
+                    break;
+                case Type.Knight:
+                    break;
+                case Type.Kraken:
+                    break;
+                case Type.Elf:
+                    break;
+                case Type.Troll:
+                    break;
+            }
+            return win;
+        }*/
     }
 }
