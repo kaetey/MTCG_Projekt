@@ -6,7 +6,12 @@ using System.Threading.Tasks;
 
 namespace Business
 {
-    class Card : ICard
+    /*interface ICard
+    {
+        
+    }*/
+
+    class Card //: ICard
     {
         public string Name { get; set; }
         public int Damage { get; set; }
@@ -22,8 +27,5 @@ namespace Business
 
     }
 
-    interface ICard
-    {
-
-    }
+    
 }
