@@ -33,12 +33,12 @@ namespace Business
 
         public void AddCard(Card newCard)
         {
-
+            this.deck.Add(newCard);
         }
 
-        public void DeleteCard()
+        public void DeleteCard(Card card)
         {
-
+            this.deck.Remove(card);
         }
 
 

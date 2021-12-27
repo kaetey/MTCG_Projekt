@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Business
 {
@@ -10,24 +6,9 @@ namespace Business
     {
         private int Rounds;
 
-        public Battle() {
-            this.Rounds = 0;
-        }
-
-        public void BattleCards(Deck deck1, Deck deck2)
+        public Battle()
         {
-            while(this.Rounds <= 100 && deck1.GetDeckList().Count != 0 && deck2.GetDeckList().Count != 0)
-            {
-                ICard card1 = this.PickRandomCard(deck1, deck1.GetDeckList().Count);
-                ICard card2 = this.PickRandomCard(deck2, deck2.GetDeckList().Count);
-
-                BattleResult result = this.Attack(card1, card2);
-
-                if(result == BattleResult.Win)  this.MoveCard();
-                else if(result == BattleResult.Lose)  this.MoveCard();
-
-                this.Rounds++;
-            }
+            this.Rounds = 0;
         }
 
         public Card PickRandomCard(Deck deck, int deckSize)
@@ -37,17 +18,37 @@ namespace Business
             return deck.GetCard(rndIndex);
         }
 
+        public void BattleCards(Deck deck1, Deck deck2)
+        {
+            while (this.Rounds <= 100 && deck1.GetDeckList().Count != 0 && deck2.GetDeckList().Count != 0)
+            {
+                //ICard card1 = this.PickRandomCard(deck1, deck1.GetDeckList().Count);
+                //ICard card2 = this.PickRandomCard(deck2, deck2.GetDeckList().Count);
+                Card card1 = this.PickRandomCard(deck1, deck1.GetDeckList().Count);
+                Card card2 = this.PickRandomCard(deck2, deck2.GetDeckList().Count);
+
+                BattleResult result = this.Attack(card1, card2);
+                if(result != BattleResult.Draw)
+                    this.MoveCard(result, card1, card2, deck1, deck2);
+
+                this.Rounds++;
+            }
+        }
+
         public BattleResult Attack(Card card1, Card card2)
         {
             //return this.CompareDamage(card1, card2);
+            BattleResult result = BattleResult.Draw;
             if ((card1 is MonsterCard && card2 is MonsterCard))   // Battletype 1: Monster vs Monster
                 result = this.monsterVsMonster((MonsterCard)card1, (MonsterCard)card2);
             else if (card1 is MonsterCard && card2 is SpellCard) //Battletype 2: Monster vs Spell
                 result = this.monsterVsSpell((MonsterCard)card1, (SpellCard)card2);
-            else if(card1 is SpellCard && card2 is MonsterCard)
+            else if (card1 is SpellCard && card2 is MonsterCard)
                 result = this.monsterVsSpell((MonsterCard)card2, (SpellCard)card1);
             else if (card1 is SpellCard && card2 is SpellCard)   //Battletype 2: Monster vs Spell
                 result = this.spellVsSpell((SpellCard)card1, (SpellCard)card2);
+
+            return result;
         }
 
         /*public BattleResult CompareDamage(MonsterCard mcard1, MonsterCard mcard2)
@@ -218,12 +219,12 @@ namespace Business
             switch (scard1.ElementType)
             {
                 case Element.Fire:
-                    if (scard2.ElementType == Element.Fire) 
+                    if (scard2.ElementType == Element.Fire)
                     {
                         if (scard2.Damage > scard1.Damage) result = BattleResult.Win_Card2;
                         else if (scard2.Damage == scard1.Damage) result = BattleResult.Draw;
                         else result = BattleResult.Win_Card1;
-                    } 
+                    }
                     else if (scard2.ElementType == Element.Water)
                     {
                         if ((scard2.Damage * 2) > (scard1.Damage / 2)) result = BattleResult.Win_Card2;
@@ -281,9 +282,18 @@ namespace Business
             return result;
         }
 
-        public void MoveCard()
+        public void MoveCard(BattleResult result, Card card1, Card card2, Deck deck1, Deck deck2)
         {
-
+            if (result == BattleResult.Win_Card1)
+            {
+                deck2.DeleteCard(card2);
+                deck1.AddCard(card2);
+            }
+            else if (result == BattleResult.Win_Card2)
+            {
+                deck1.DeleteCard(card1);
+                deck2.AddCard(card1);
+            }
         }
     }
 }
