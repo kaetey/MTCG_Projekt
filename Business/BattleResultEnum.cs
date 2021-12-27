@@ -1,1 +1,1 @@
-﻿enum BattleResult { Win, Lose, Draw }
+﻿enum BattleResult { Win_Card1, Win_Card2, Draw }

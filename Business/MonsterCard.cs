@@ -8,10 +8,10 @@ namespace Business
 {
     class MonsterCard : Card
     {
-        public Type type { get; set; }
+        public Type Type { get; set; }
 
         public MonsterCard(string name, int damage, int element, int type) : base(name, damage, element){
-            this.type = (Type)type;
+            this.Type = (Type)type;
         }
 
         /*public bool attack(Card enemyCard)

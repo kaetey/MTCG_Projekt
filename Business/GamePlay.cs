@@ -6,19 +6,19 @@ using System.Threading.Tasks;
 
 namespace Business
 {
-    class GamePlay
+    public class GamePlay
     {
-        public void battle()
+        public void Battle()
         {
             Deck player1Deck = new Deck();
-            player1Deck.chooseDeck();
+            player1Deck.ChooseDeck();
             Deck player2Deck = new Deck();
-            player2Deck.chooseDeck();
+            player2Deck.ChooseDeck();
             Battle battle = new Battle();
-            battle.battleCards(player1Deck, player2Deck);
+            battle.BattleCards(player1Deck, player2Deck);
         }
 
-        public void trade()
+        public void Trade()
         {
 
         }

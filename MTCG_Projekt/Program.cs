@@ -1,4 +1,5 @@
 ﻿using System;
+using Business;
 
 namespace MTCG_Projekt
 {
@@ -6,7 +7,8 @@ namespace MTCG_Projekt
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Business.GamePlay gm = new Business.GamePlay();
+            gm.Battle();
         }
     }
 }

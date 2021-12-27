@@ -2,7 +2,7 @@
 
 namespace Business
 {
-    public class User : IPackage
+    class User : IPackage
     {
         private string name { get; set; }
         private string password { get; set; }

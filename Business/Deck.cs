@@ -12,17 +12,17 @@ namespace Business
 
         public Deck() { }
 
-        public List<Card> getDeckList()
+        public List<Card> GetDeckList()
         {
             return this.deck;
         }
 
-        public Card getCard(int index)
+        public Card GetCard(int index)
         {
             return this.deck[index];
         }
 
-        public void chooseDeck()
+        public void ChooseDeck()
         {
             for (int i = 0; i < 4; i++)
             {
@@ -31,12 +31,12 @@ namespace Business
             }
         }
 
-        public void addCard(Card newCard)
+        public void AddCard(Card newCard)
         {
 
         }
 
-        public void deleteCard()
+        public void DeleteCard()
         {
 
         }

@@ -6,19 +6,24 @@ using System.Threading.Tasks;
 
 namespace Business
 {
-    class Card
+    class Card : ICard
     {
-        public string name { get; set; }
-        public int damage { get; set; }
-        public Element elementType { get; set; }
+        public string Name { get; set; }
+        public int Damage { get; set; }
+        public Element ElementType  { get; set; }
 
         public Card(){}
         public Card(string name, int damage , int element)
         {
-            this.name = name;
-            this.damage = damage;
-            this.elementType = (Element)element;
+            this.Name = name;
+            this.Damage = damage;
+            this.ElementType = (Element)element;
         }
+
+    }
+
+    interface ICard
+    {
 
     }
 }
