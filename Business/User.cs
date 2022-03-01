@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Business
+namespace MTCG_GamePlay
 {
     class User : IPackage
     {

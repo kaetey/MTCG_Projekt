@@ -5,9 +5,11 @@ VisualStudioVersion = 16.0.31424.327
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MTCG_Projekt", "MTCG_Projekt\MTCG_Projekt.csproj", "{C99E4BBE-E4C4-4878-959D-F6D0FD2D253C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Business", "Business\Business.csproj", "{EC9CBA03-CC65-48E8-B236-EDB05093EB49}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MTCG_GamePlay", "Business\MTCG_GamePlay.csproj", "{EC9CBA03-CC65-48E8-B236-EDB05093EB49}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Business.Test", "Business.Test\Business.Test.csproj", "{8C1B803E-7429-4491-AD04-90212D5D71AE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Business.Test", "Business.Test\Business.Test.csproj", "{8C1B803E-7429-4491-AD04-90212D5D71AE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MTCG.GamePlay", "MTCG.GamePlay\MTCG.GamePlay.csproj", "{777EEA8E-D9A1-496D-B90E-99309454D27C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{8C1B803E-7429-4491-AD04-90212D5D71AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8C1B803E-7429-4491-AD04-90212D5D71AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8C1B803E-7429-4491-AD04-90212D5D71AE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{777EEA8E-D9A1-496D-B90E-99309454D27C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{777EEA8E-D9A1-496D-B90E-99309454D27C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{777EEA8E-D9A1-496D-B90E-99309454D27C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{777EEA8E-D9A1-496D-B90E-99309454D27C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

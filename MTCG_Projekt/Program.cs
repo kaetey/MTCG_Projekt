@@ -1,5 +1,5 @@
 ﻿using System;
-using Business;
+using MTCG_GamePlay;
 
 namespace MTCG_Projekt
 {
@@ -7,7 +7,7 @@ namespace MTCG_Projekt
     {
         static void Main(string[] args)
         {
-            Business.GamePlay gm = new Business.GamePlay();
+            MTCG_GamePlay.GamePlay gm = new MTCG_GamePlay.GamePlay();
             gm.Battle();
         }
     }

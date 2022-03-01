@@ -1,7 +1,7 @@
 using System;
 using Xunit;
 
-namespace Business.Test
+namespace MTCG_GamePlay.Test
 {
     public class UnitTest1
     {

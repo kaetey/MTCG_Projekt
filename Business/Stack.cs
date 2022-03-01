@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 // Stack erbt von IPackages?
 
-namespace Business
+namespace MTCG_GamePlay
 {   
     class Stack
     {
